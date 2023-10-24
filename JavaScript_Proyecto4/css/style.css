@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgb(255, 167, 203);
+}
+.reloj{
+    width: 350px;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1rem solid rgb(254, 40, 150);
+    border-radius: 50vh;
+    /*Sombra interna*/
+    /*Inset para el sombreado interno*/
+    box-shadow: inset 0px 0px 20px 5px rgb(254, 40, 150);
+}
+/*Crear contenidos internos*/
+.reloj::before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(254, 40, 150);
+    border-radius: 50vh;
+    /*indica que el boton va estar por encima*/
+    z-index: 15;
+}
+/*Se definen los contenedores para las manecillas del reloj*/
+.hora{
+    width: 140px;
+    height: 140px;
+}
+.minuto{
+    width: 220px;
+    height: 220px;
+}
+.segundo{
+    width: 250px;
+    height: 250px;
+}
+.hora::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 90px;
+    background: rgb(248, 15, 135);
+    z-index: 10;
+    border-radius: 50vh;
+}
+.minuto::before{
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 130px;
+    background: rgb(255, 103, 182);
+    z-index: 11;
+    border-radius: 50vh; 
+}
+.segundo::before{
+    content: '';
+    position: absolute;
+    width: 1.8px;
+    height: 150px;
+    background: rgb(255, 255, 255);
+    z-index: 12;
+    border-radius: 50vh; 
+}
+.hora, .minuto, .segundo{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50vh;
+}
+.hora-digital{
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    z-index: 5;
+    top: 60%;  /*Posición vertical centrada*/
+    left: 50%;  /*Posición horizontal centrada*/
+    transform: translate(-50%, -50%);  /*Centrar en el medio de la esfera*/
+    font-family: Arial, Helvetica, sans-serif;
+    border: 2px solid rgb(254, 40, 150); /*Borde sólido*/
+    padding: 4px; /*Espacio interno alrededor del contenido*/
+    background-color: rgb(255, 167, 203); 
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+
+
